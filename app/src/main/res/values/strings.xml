@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SocialGoDemo</string>
+    <string name="share_title">鸿门宴</string>
+    <string name="share_text">这是一个经典的故事。</string>
+</resources>
