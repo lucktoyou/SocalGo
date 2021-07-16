@@ -15,7 +15,7 @@ allprojects {
 ```groovy
 dependencies {
     //...
-    implementation 'com.github.lucktoyou:SocialGo:2.1.1'
+    implementation 'com.github.lucktoyou:SocialGo:release'
 }
 ```
 
@@ -31,7 +31,7 @@ Android第三方登录，分享，支付组件。包括QQ，微信，微博和�
 * 一行代码实现分享登录支付的调用。
 
 ### 使用流程
-* 在Application中初始化第三方平台和配置各自的appke
+* 在Application中初始化第三方平台和配置各自的appkey等.
                  
         SocialGo.init(SocialGoConfig.create(this)
                 .debug(true)
@@ -118,5 +118,5 @@ Android第三方登录，分享，支付组件。包括QQ，微信，微博和�
 ### 第三方底层SDK版本
 * QQ：`open_sdk_3.5.4.11_r3f56456_lite.jar`
 * 微信：`com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.7.0`
-* 微博：`openDefault-10.10.0.aar`
+* 微博：`io.github.sinaweibosdk:core:11.6.0@aar`
 * 支付宝：`alipaySdk-15.5.9-20181123210601.jar`
