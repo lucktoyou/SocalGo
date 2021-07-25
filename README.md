@@ -80,13 +80,6 @@ Android第三方登录，分享，支付组件。包括QQ，微信，微博和�
             onFailure {
                 mProgressDialog.dismiss()
                 tvConsole?.text = "分享失败"
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (it.errorCode == SocialError.CODE_STORAGE_READ_ERROR) {
-                        requestPermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 100)
-                    } else if (it.errorCode == SocialError.CODE_STORAGE_WRITE_ERROR) {
-                        requestPermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 100)
-                    }
-                }
             }
             onCancel {
                 mProgressDialog.dismiss()
