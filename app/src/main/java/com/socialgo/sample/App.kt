@@ -16,7 +16,7 @@ import com.socialgo.weibo.WbPlatform
  * @since 18-7-20 下午4:30
  */
 
-class AppApplication : Application() {
+class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
