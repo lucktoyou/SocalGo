@@ -4,7 +4,7 @@ apply plugin: 'maven-publish'
 
 def gStr = 'com.github.lucktoyou'
 def aStr = 'SocialGo'
-def vStr = '2.1.7'
+def vStr = '2.1.8'
 group = gStr
 version = vStr
 

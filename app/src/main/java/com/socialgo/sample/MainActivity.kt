@@ -4,11 +4,13 @@ import android.app.ProgressDialog
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
 import android.view.View
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.socialgo.core.SocialGo
 import com.socialgo.core.model.ShareEntity
 import com.socialgo.core.platform.Target
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(){
 
@@ -18,11 +20,22 @@ class MainActivity : AppCompatActivity(){
     private var shareTarget : Int = 0
     private lateinit var shareEntity :ShareEntity
     private lateinit var mProgressDialog :ProgressDialog
+    private lateinit var containerType : RadioGroup
+    private lateinit var containerPlatform : RadioGroup
+    private lateinit var tvConsole : TextView
+    private lateinit var rbTypeText : RadioButton
+    private lateinit var rbPlatformQQ : RadioButton
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mProgressDialog = ProgressDialog(this)
+        containerType = findViewById(R.id.containerType)
+        containerPlatform = findViewById(R.id.containerPlatform)
+        tvConsole = findViewById(R.id.tvConsole)
+        rbTypeText = findViewById(R.id.rbTypeText)
+        rbPlatformQQ = findViewById(R.id.rbPlatformQQ)
         initEvent()
         initSet()
     }
