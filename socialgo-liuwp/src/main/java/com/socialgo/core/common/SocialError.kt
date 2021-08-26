@@ -7,7 +7,7 @@ import android.text.TextUtils
  */
 class SocialError(errorCode: Int) {
 
-    var errorMsg: String? = null
+    private var errorMsg: String? = null
 
     init {
         when (errorCode) {
@@ -43,9 +43,7 @@ class SocialError(errorCode: Int) {
     }
 
     override fun toString(): String {
-        val sb = StringBuilder()
-                .append("SocialGoErrorMessage = ").append(errorMsg)
-        return sb.toString()
+        return errorMsg?:""
     }
 
     companion object {

@@ -11,7 +11,7 @@ object ShareEntityChecker {
 
     private var sErrMsgRef = ErrMsgRef("", null)
 
-    class ErrMsgRef(msg: String, obj: ShareEntity?) : WeakReference<String>("$msg data = " + (obj?.toString() ?: "no data"))
+    class ErrMsgRef(msg: String, obj: ShareEntity?) : WeakReference<String>("$msg;${obj?.toString()}.")
 
     fun getErrorMsg(): String? {
         return sErrMsgRef.get()
@@ -35,7 +35,7 @@ object ShareEntityChecker {
     private fun isTitleSummaryValid(entity: ShareEntity): Boolean {
         val valid = !SocialGoUtils.isAnyEmpty(entity.getTitle(), entity.getSummary())
         if (!valid) {
-            sErrMsgRef = ErrMsgRef("title summary 不能空", entity)
+            sErrMsgRef = ErrMsgRef("title or summary invalid", entity)
         }
         return valid
     }
@@ -43,7 +43,7 @@ object ShareEntityChecker {
     private fun isSummaryValid(entity: ShareEntity): Boolean {
         val valid = !SocialGoUtils.isAnyEmpty(entity.getSummary())
         if (!valid) {
-            sErrMsgRef = ErrMsgRef("summary 不能空", entity)
+            sErrMsgRef = ErrMsgRef("summary invalid", entity)
         }
         return valid
     }
@@ -53,7 +53,7 @@ object ShareEntityChecker {
         val targetUrl = entity.getUrl()
         val urlValid = !SocialGoUtils.isAnyEmpty(targetUrl) && SocialGoUtils.isHttpPath(targetUrl)
         if (!urlValid) {
-            sErrMsgRef = ErrMsgRef("url : $targetUrl  不能为空，且必须带有http协议头", entity)
+            sErrMsgRef = ErrMsgRef("url invalid", entity)
         }
         return urlValid
     }
@@ -64,7 +64,7 @@ object ShareEntityChecker {
         val exist = SocialGoUtils.isExist(thumbImagePath)
         val picFile = SocialGoUtils.isPicFile(thumbImagePath)
         if (!exist || !picFile) {
-            sErrMsgRef = ErrMsgRef("path : " + thumbImagePath + "  " + (if (exist) "" else "文件不存在") + if (picFile) "" else "不是图片文件", obj)
+            sErrMsgRef = ErrMsgRef("file ${if (exist) "" else "not exist"} ${if(picFile) "" else "not is image"}" , obj)
         }
         return exist && picFile
     }

@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity(){
             }
             onFailure {
                 mProgressDialog.dismiss()
-                printMsg("登录失败 -> ${it.errorMsg}")
+                printMsg("登录失败 -> $it")
             }
         }
     }
@@ -158,7 +158,7 @@ class MainActivity : AppCompatActivity(){
                 printMsg("支付取消")
             }
             onFailure {
-                printMsg("支付失败 -> ${it.errorMsg}")
+                printMsg("支付失败 -> $it")
             }
 
         }

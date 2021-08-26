@@ -4,7 +4,7 @@ apply plugin: 'maven-publish'
 
 def gStr = 'com.github.lucktoyou'
 def aStr = 'SocialGo'
-def vStr = '2.1.8'
+def vStr = '2.1.9'
 group = gStr
 version = vStr
 
@@ -13,6 +13,9 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
+        ndk {
+            abiFilters 'armeabi', 'armeabi-v7a','arm64-v8a'
+        }
     }
     buildTypes {
         release {
