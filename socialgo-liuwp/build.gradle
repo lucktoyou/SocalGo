@@ -1,12 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'maven-publish'
-
-def gStr = 'com.github.lucktoyou'
-def aStr = 'SocialGo'
-def vStr = '2.1.11'
-group = gStr
-version = vStr
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -16,6 +9,9 @@ android {
         ndk {
             abiFilters 'armeabi', 'armeabi-v7a','arm64-v8a'
         }
+        manifestPlaceholders = [
+                "QQ_APP_ID": "xxxxx",
+        ]
     }
     buildTypes {
         release {
@@ -36,12 +32,7 @@ repositories {
     flatDir {
         dirs 'libs'
     }
-    mavenCentral()
-    google()
-    jcenter()
-    maven { url "https://jitpack.io" }
 }
-
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -56,17 +47,4 @@ dependencies {
     implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.7.0'
     //新浪微博
     implementation 'io.github.sinaweibosdk:core:11.6.0@aar'
-}
-
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId = gStr
-                artifactId = aStr
-                version = vStr
-            }
-        }
-    }
 }

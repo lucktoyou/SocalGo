@@ -10,10 +10,6 @@ android {
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
-
-        manifestPlaceholders = [
-                "QQ_APP_ID": "xxxxx",
-        ]
     }
 
     buildTypes {
@@ -39,7 +35,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':socialgo-liuwp')
-//    implementation 'com.github.lucktoyou:SocialGo:2.1.10'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation rootProject.ext.dependencies.constraintlayout
     implementation rootProject.ext.dependencies.appcompat

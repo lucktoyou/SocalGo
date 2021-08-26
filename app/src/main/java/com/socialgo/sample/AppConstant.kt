@@ -11,7 +11,7 @@ object AppConstant {
     const val WX_APP_ID = "xxxxx"
     const val WX_APP_SECRET = "xxxxx"
 
-    // QQ账号.QQ_APP_ID值与build.gradle(app)中QQ_APP_ID值一致
+    // QQ账号.QQ_APP_ID值与build.gradle(socialgo-liuwp)中QQ_APP_ID值一致
     const val QQ_APP_ID = "xxxxx"
     const val QQ_APP_KEY = "xxxxx"
 

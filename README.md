@@ -1,24 +1,6 @@
 ### 功能预览
 <img src="/preview/main.jpg" width="380px"/>
 
-### 使用方式
-在根目录下的build.gradle里添加maven仓库
-```groovy
-allprojects {
-    repositories {
-	    //...
-	    maven { url 'https://jitpack.io' }
-	}
-}
-```
-添加依赖
-```groovy
-dependencies {
-    //...
-    implementation 'com.github.lucktoyou:SocialGo:release'
-}
-```
-
 # 项目说明
 Android第三方登录，分享，支付组件。包括QQ，微信，微博和支付宝。
 
