@@ -4,7 +4,7 @@ apply plugin: 'maven-publish'
 
 def gStr = 'com.github.lucktoyou'
 def aStr = 'SocialGo'
-def vStr = '2.1.10'
+def vStr = '2.1.11'
 group = gStr
 version = vStr
 
@@ -36,7 +36,12 @@ repositories {
     flatDir {
         dirs 'libs'
     }
+    mavenCentral()
+    google()
+    jcenter()
+    maven { url "https://jitpack.io" }
 }
+
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -58,12 +63,6 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId = gStr
-                artifactId = aStr
-                version = vStr
-            }
-            debug(MavenPublication) {
-                from components.debug
                 groupId = gStr
                 artifactId = aStr
                 version = vStr
