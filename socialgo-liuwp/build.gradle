@@ -4,7 +4,7 @@ apply plugin: 'maven-publish'
 
 def gStr = 'com.github.lucktoyou'
 def aStr = 'SocialGo'
-def vStr = '2.1.9'
+def vStr = '2.1.10'
 group = gStr
 version = vStr
 
@@ -58,6 +58,12 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
+                groupId = gStr
+                artifactId = aStr
+                version = vStr
+            }
+            debug(MavenPublication) {
+                from components.debug
                 groupId = gStr
                 artifactId = aStr
                 version = vStr
